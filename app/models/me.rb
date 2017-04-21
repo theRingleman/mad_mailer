@@ -20,4 +20,8 @@ class Me
 		self.name.downcase.split(' ').join('.') + "@madwiremedia.com"
 	end
 
+	def import(file)
+		binding.pry
+	end
+
 end

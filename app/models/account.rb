@@ -1,5 +1,6 @@
 class Account
 	include ActiveModel::Model
+	require 'csv'
 
 	attr_accessor :account_number, :me, :improvement
 
@@ -22,11 +23,10 @@ class Account
 	end
 
 	def send_mail
-		MadMailer.account_info(self).deliver
+		AccountMailer.account_info(self).deliver
 	end
 
 	def self.import(file)
-		binding.pry
 		CSV.foreach(file.path, headers: true) do |row|
 			if @@all.empty?
 				self.new(row['Account Description'], row['Marketing Executive'], row['Account Improvement'])
@@ -38,6 +38,7 @@ class Account
 				end
 			end
 		end
+		binding.pry
 	end
 
 end

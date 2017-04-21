@@ -1,1 +1,11 @@
 <h1>Welcome to the accounts page!</h1>
+
+<%= flash[:notice] %>
+
+<h2>Pelase upload your CSV File</h2>
+<%= form_tag import_accounts_path, multipart: true do %>
+	<%= file_field_tag :file %>
+	<%= submit_tag "Import CSV" %>
+<% end %>
+
+<%= link_to "Send Emails", :controller => :accounts, :action => :send_emails %>

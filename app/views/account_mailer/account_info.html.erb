@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h3>Google has recommended the following for <%= @account.account_number %>:</h3>
+    <ul>
+    	<% @account.improvement.each do |imp| %>
+				<li><%= imp %></li>
+    	<% end %>
+    </ul>
+
+    <p><a href="https://drive.google.com/a/madwiremedia.com/file/d/0B5iJ3kOGCKmmNFVrbFF2QXJXM28/view?usp=sharing">See this presentation</a> If you want to learn more about why these changes were suggested or how to pitch them to your client.</p>
+
+    <p>Thanks:</p>
+
+    <h4>Aubrey Darnell</h4>
+  </body>
+</html>
